@@ -1,8 +1,8 @@
 package gianlucamerlo.u5d8.controllers;
 
-import gianlucamerlo.u5d7.entities.Blog;
-import gianlucamerlo.u5d7.payloads.NewBlogPayload;
-import gianlucamerlo.u5d7.services.BlogsService;
+import gianlucamerlo.u5d8.entities.Blog;
+import gianlucamerlo.u5d8.payloads.NewBlogPayload;
+import gianlucamerlo.u5d8.services.BlogsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

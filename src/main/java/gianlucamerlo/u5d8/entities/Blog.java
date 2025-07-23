@@ -29,7 +29,7 @@ public class Blog {
 
 public Blog(String categoria,String titolo,String cover,String contenuto,int tempoDiLettura)
 {
-    
+
     this.categoria=categoria;
     this.titolo=titolo;
     this.cover=cover;

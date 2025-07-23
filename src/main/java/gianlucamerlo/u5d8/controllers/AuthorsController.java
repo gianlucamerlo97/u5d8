@@ -1,13 +1,15 @@
 package gianlucamerlo.u5d8.controllers;
 
-import gianlucamerlo.u5d7.entities.Author;
-import gianlucamerlo.u5d7.payloads.NewAuthorPayload;
-import gianlucamerlo.u5d7.services.AuthorsService;
+import gianlucamerlo.u5d8.entities.Author;
+import gianlucamerlo.u5d8.payloads.NewAuthorPayload;
+import gianlucamerlo.u5d8.services.AuthorsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/authors")
 public class AuthorsController {
@@ -26,18 +28,18 @@ public class AuthorsController {
     }
 
     @GetMapping("/{authorId}")
-    public Author getAuthorById(@PathVariable int authorId){
+    public Author getAuthorById(@PathVariable UUID authorId){
         return this.authorsService.findById(authorId);
     }
 
     @PutMapping("/{authorId}")
-    public Author findAuthorByIdAndUpdate(@PathVariable int authorId,@RequestBody NewAuthorPayload body){
+    public Author findAuthorByIdAndUpdate(@PathVariable UUID authorId,@RequestBody NewAuthorPayload body){
          return this.authorsService.findByIdAndUpdate(authorId,body);
     }
 
     @DeleteMapping("/{authorId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void findAuthorByIdAndDelete(@PathVariable int authorId)
+    public void findAuthorByIdAndDelete(@PathVariable UUID authorId)
     {
         this.authorsService.findByIdAndDelete(authorId);
     }

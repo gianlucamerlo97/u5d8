@@ -1,8 +1,8 @@
 package gianlucamerlo.u5d8.services;
 
-import gianlucamerlo.u5d7.entities.Blog;
-import gianlucamerlo.u5d7.exceptions.NotFoundException;
-import gianlucamerlo.u5d7.payloads.NewBlogPayload;
+import gianlucamerlo.u5d8.entities.Blog;
+import gianlucamerlo.u5d8.exceptions.NotFoundException;
+import gianlucamerlo.u5d8.payloads.NewBlogPayload;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
