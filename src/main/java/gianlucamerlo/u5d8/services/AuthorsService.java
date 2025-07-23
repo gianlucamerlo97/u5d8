@@ -5,7 +5,7 @@ import gianlucamerlo.u5d8.exceptions.NotFoundException;
 import gianlucamerlo.u5d8.payloads.NewAuthorPayload;
 import gianlucamerlo.u5d8.repositories.AuthorsRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.coyote.BadRequestException;
+import gianlucamerlo.u5d8.exceptions.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,7 +44,7 @@ public class AuthorsService {
     public Author findByIdAndUpdate(UUID authorId,NewAuthorPayload payload){
         Author found =this.findById(authorId);
         if (!found.getEmail().equals(payload.getEmail()))
-        this.authorsRepository.findByEmail(payload.getEmail()).ifPresent(author -> {throw new BadRequestException("L'email "+author.getEmail()+" è già in uso!");
+        this.authorsRepository.findByEmail(payload.getEmail()).ifPresent(author -> {throw new ("L'email "+author.getEmail()+" è già in uso!");
         });
 
         return found;
