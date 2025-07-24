@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/blogs")
@@ -26,21 +27,21 @@ public class BlogsController {
         return this.blogsService.saveBlog(body);
     }
 
-    @GetMapping("/{blogId}")
-    public Blog getBlogById(@PathVariable int blogId){
-        return this.blogsService.findById(blogId);
-    }
+//    @GetMapping("/{blogId}")
+//    public Blog getBlogById(@PathVariable UUID blogId){
+//        return this.blogsService.findById(blogId);
+//    }
+//
+//    @PutMapping("/{blogId}")
+//    public Blog findBlogByIdAndUpdate(@PathVariable int blogId,@RequestBody NewBlogPayload body)
+//    {
+//        return this.blogsService.findByIdAndUpdate(blogId,body);
+//    }
 
-    @PutMapping("/{blogId}")
-    public Blog findBlogByIdAndUpdate(@PathVariable int blogId,@RequestBody NewBlogPayload body)
-    {
-        return this.blogsService.findByIdAndUpdate(blogId,body);
-    }
-
-    @DeleteMapping("/{blogId}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void findBlogByIdAndDelete(@PathVariable int blogId){
-        this.blogsService.findByIdAndDelete(blogId);
-    }
+//    @DeleteMapping("/{blogId}")
+//    @ResponseStatus(HttpStatus.NO_CONTENT)
+//    public void findBlogByIdAndDelete(@PathVariable int blogId){
+//        this.blogsService.findByIdAndDelete(blogId);
+//    }
 
 }

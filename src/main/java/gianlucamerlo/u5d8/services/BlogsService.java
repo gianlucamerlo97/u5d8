@@ -25,38 +25,38 @@ public class BlogsService {
         return newBlog;
     }
 
-    public Blog findById(int blogId){
-        Blog found=null;
-        for(Blog blog:this.blogsDB){
-            if(blog.getId()==blogId) found=blog;
-        }
-        if (found==null) throw new NotFoundException(blogId);
-        return found;
-    }
+//    public Blog findById(int blogId){
+//        Blog found=null;
+//        for(Blog blog:this.blogsDB){
+//            if(blog.getId()==blogId) found=blog;
+//        }
+//        if (found==null) throw new NotFoundException(blogId);
+//        return found;
+//    }
+//
+//    public Blog findByIdAndUpdate(int blogId,NewBlogPayload payload){
+//        Blog found=null;
+//        for(Blog blog:this.blogsDB) {
+//            if (blog.getId() == blogId) {
+//                found = blog;
+//                found.setCategoria(payload.getCategoria());
+//                found.setContenuto(payload.getContenuto());
+//                found.setTitolo(payload.getTitolo());
+//                found.setTempoDiLettura(payload.getTempoDiLettura());
+//
+//            }
+//        }
+//            if (found==null) throw new NotFoundException(blogId);
+//            return found;
+//    }
 
-    public Blog findByIdAndUpdate(int blogId,NewBlogPayload payload){
-        Blog found=null;
-        for(Blog blog:this.blogsDB) {
-            if (blog.getId() == blogId) {
-                found = blog;
-                found.setCategoria(payload.getCategoria());
-                found.setContenuto(payload.getContenuto());
-                found.setTitolo(payload.getTitolo());
-                found.setTempoDiLettura(payload.getTempoDiLettura());
-
-            }
-        }
-            if (found==null) throw new NotFoundException(blogId);
-            return found;
-    }
-
-    public void findByIdAndDelete(int blogId){
-        Blog found=null;
-        for(Blog blog:this.blogsDB) {
-            if (blog.getId() == blogId)
-                found = blog;
-        }
-            if (found==null) throw new NotFoundException(blogId);
-            this.blogsDB.remove(found);
-    }
+//    public void findByIdAndDelete(int blogId){
+//        Blog found=null;
+//        for(Blog blog:this.blogsDB) {
+//            if (blog.getId() == blogId)
+//                found = blog;
+//        }
+//            if (found==null) throw new NotFoundException(blogId);
+//            this.blogsDB.remove(found);
+//    }
 }
